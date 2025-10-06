@@ -8,7 +8,7 @@ import React from "react";
 export const Home = () => {
 	const { store } = useGlobalReducer();
 
-	// Carrusel de planets
+
 	const [planetIndex, setPlanetIndex] = React.useState(0);
 	const planetsToShow = 4;
 	const planetsArray = store.planets || [];
@@ -26,7 +26,7 @@ export const Home = () => {
 				: prev + 1
 		);
 	};
-	// Carrusel de characters
+	
 	const [startIndex, setStartIndex] = React.useState(0);
 	const cardsToShow = 4;
 	const charactersArray = store.characters || [];
@@ -45,7 +45,7 @@ export const Home = () => {
 		);
 	};
 
-	// Carrusel de vehicles
+	
 	const [vehicleIndex, setVehicleIndex] = React.useState(0);
 	const vehiclesToShow = 4;
 	const vehiclesArray = store.vehicles || [];
