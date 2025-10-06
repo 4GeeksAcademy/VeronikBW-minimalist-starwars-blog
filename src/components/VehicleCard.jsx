@@ -18,11 +18,11 @@ export default function VehicleCard({ vehicle }) {
 
     return (
         <div className="card bg-dark text-white">
-            <img src={imageUrl} className="card-img-top" alt={vehicle?.properties?.name || "Vehicle image"} />
+            <img src={imageUrl} className="card-img-top" alt={vehicle.properties.name} />
             <div className="card-body text-start">
-                <h5 className="card-title mb-3">{vehicle?.properties?.name || "Sin nombre"}</h5>
-                <p>Model: {vehicle?.properties?.model}</p>
-                <p>Manufacturer: {vehicle?.properties?.manufacturer}</p>
+                <h5 className="card-title mb-3">{vehicle?.properties?.name}</h5>
+                <p>Model: {vehicle.properties.model}</p>
+                <p>Manufacturer: {vehicle.properties.manufacturer}</p>
                 <div className="d-flex justify-content-between">
                     <Link to={`/vehicle/${vehicle.uid}`} className="btn btn-outline-light">Learn More</Link>
                     <button type="button" className={`btn btn-outline-danger${isFavorite ? ' active' : ''}`} onClick={handleFavorite}>

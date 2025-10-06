@@ -18,7 +18,7 @@ export default function CharacterCard({ character }) {
 
     return (
         <div className="card bg-dark text-white">
-            <img src={imageUrl} className="card-img-top" alt={character.properties.name || "Character image"} />
+            <img src={imageUrl} className="card-img-top" alt={character.properties.name} />
             <div className="card-body text-start">
                 <h5 className="card-title mb-3">{character.properties.name}</h5>
                 <p>Gender: {character.properties.gender}</p>

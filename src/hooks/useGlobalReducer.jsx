@@ -23,9 +23,6 @@ export function StoreProvider({ children }) {
                     const dataDetail = await responseDetail.json()
                     planetsArray.push(dataDetail.result);
                 }
-                if (planetsArray.length > 0) {
-                    localStorage.setItem("planets", JSON.stringify(planetsArray));
-                }
             }
             dispatch({ type: "SET_PLANETS", payload: planetsArray });
         } catch (error) {
@@ -45,10 +42,7 @@ export function StoreProvider({ children }) {
                     const dataDetail = await responseDetail.json()
                     vehiclesArray.push(dataDetail.result);
                 }
-                // Solo guarda si hay datos válidos
-                if (vehiclesArray.length > 0) {
-                    localStorage.setItem("vehicles", JSON.stringify(vehiclesArray));
-                }
+
             }
             dispatch({ type: "SET_VEHICLES", payload: vehiclesArray });
         } catch (error) {

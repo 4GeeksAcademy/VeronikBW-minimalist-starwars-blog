@@ -5,9 +5,9 @@ export default function Navbar() {
     const { store, dispatch } = useGlobalReducer();
     const favorites = store.favorites || [];
 
-    const handleRemove = (fav, e) => {
-        e.preventDefault();
-        e.stopPropagation();
+    const handleRemove = (fav, event) => {
+        event.preventDefault();
+        event.stopPropagation();
         dispatch({ type: "REMOVE_FAVORITE", payload: fav });
     };
 
@@ -30,9 +30,9 @@ export default function Navbar() {
                                 ) : (
                                     favorites.map(fav => {
                                         let displayName = "Favorite";
-                                        if (fav.properties?.name) displayName = fav.properties.name;
-                                        else if (fav.properties?.model) displayName = fav.properties.model;
-                                        else if (fav.properties?.title) displayName = fav.properties.title;
+                                        if (fav.properties.name) displayName = fav.properties.name;
+                                        else if (fav.properties.model) displayName = fav.properties.model;
+                                        else if (fav.properties.title) displayName = fav.properties.title;
                                         let linkTo = "#";
                                         if (fav.type === "character") linkTo = `/character/${fav.uid}`;
                                         if (fav.type === "planet") linkTo = `/planet/${fav.uid}`;
